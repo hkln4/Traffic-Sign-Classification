@@ -1,20 +1,7 @@
 # Traffic-Sign-Classification
 
-This project implements a Traffic Sign Classification model using a Convolutional Neural Network (CNN) architecture. The model is trained on the “valentynsichkar/traffic-signs-preprocessed” dataset, which consists of traffic sign images of size 32x32 pixels with three RGB channels. The project is developed using Python, leveraging TensorFlow and Keras for deep learning.
+This project presents an advanced implementation of traffic sign classification using a Convolutional Neural Network (CNN) developed with TensorFlow and Keras. The model is trained on the “valentynsichkar/traffic-signs-preprocessed” dataset, a preprocessed collection of traffic sign images, each standardized to 32x32 pixels with three RGB channels. Data preprocessing begins with loading the dataset from pickle files, followed by reshaping the image tensors to conform to the standard input shape required by the neural network. Label data is one-hot encoded using TensorFlow’s to_categorical() method, enabling efficient multi-class classification.
 
-Key Techniques and Workflow:
-	•	Data Loading and Preprocessing:
-	    -> The preprocessed dataset is loaded in the form of pickle files.
-	    -> The images are reshaped to a consistent format of (32, 32, 3) using NumPy.
-	    -> The labels are one-hot encoded using TensorFlow’s to_categorical() method.
-	•	CNN Architecture:
-	    -> Built using TensorFlow’s Keras API.
-	    -> Includes a combination of Convolutional (Conv2D), Pooling (MaxPooling2D), Dropout, and Dense layers.
-	    -> Regularization techniques like Dropout and Batch Normalization are used for better generalization.
-	• Training and Evaluation:
-	    -> The model is trained using the Adam optimizer with a learning rate scheduler for efficient training.
-	    -> Evaluation metrics include accuracy, with performance measured on the test set.
-	•	Performance Optimization:
-	    -> Adaptive learning rate scheduling to ensure stable convergence.
+The CNN architecture is constructed using a sequential model, comprising multiple convolutional layers that extract hierarchical spatial features from the images. These convolutional layers are interleaved with pooling layers (MaxPooling2D), which progressively reduce the spatial dimensions while retaining essential features. Regularization techniques, including dropout and batch normalization, are integrated to prevent overfitting and stabilize the training process. The network’s fully connected (dense) layers further refine the extracted features, leading to a final softmax output layer, which produces probability distributions for each of the 43 traffic sign classes.
 
-This project demonstrates the effective use of CNNs for multi-class image classification in a traffic sign recognition context.
+Training is optimized using the Adam optimizer, with an adaptive learning rate scheduler to ensure efficient convergence without oscillations. Model evaluation is based on accuracy, assessed on a separate test set, providing a clear measure of classification performance. The project demonstrates a sophisticated application of deep learning in the context of image classification, highlighting the potential of convolutional neural networks for reliable real-time recognition of traffic signs.
